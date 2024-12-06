@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة المتجر</title>
+    <style>
+        body {
+            font-family: "Tajawal", Arial, sans-serif; /* خط جذاب وداعم للعربية */
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            direction: rtl; /* لجعل النصوص من اليمين إلى اليسار */
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(90deg, #ff9800, #e67e22);
+            color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            width: 90%;
+            max-width: 400px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: right; /* لتنسيق النصوص من اليمين */
+        }
+
+        .product h2 {
+            margin: 0 0 10px;
+            font-size: 1.5rem;
+            color: #ff9800;
+        }
+
+        .product p {
+            margin: 0 0 15px;
+            line-height: 1.6;
+        }
+
+        .product button {
+            background: #ff9800;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+            width: 100%;
+        }
+
+        .product button:hover {
+            background: #e67e22;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #e67e22;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 0.9rem;
+        }
+    </style>
+    <!-- إضافة خط "تجوال" -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>مرحبًا في متجرنا</h1>
+    </header>
+    <main>
+        <!-- المنتج الأول -->
+        <div class="product">
+            <h2>خدمة زيادة متابعين تيك توك</h2>
+            <p>احصل على عدد كبير من المتابعين الحقيقيين بأسعار رائعة لتحسين ظهورك على السوشيال ميديا.</p>
+            <button onclick="window.location.href='order_followers.html'">شراء الآن</button>
+        </div>
+        <!-- المنتج الثاني -->
+        <div class="product">
+            <h2>خدمة إدارة الحساب</h2>
+            <p>نساعدك على إدارة حساباتك بكفاءة عالية لتحقيق أهدافك الرقمية.</p>
+            <button onclick="window.location.href='manage_account.html'">شراء الآن</button>
+        </div>
+       <!-- المنتج الثالث -->
+        <div class="product">
+            <h2>خدمة زيادة لايكات تيك توك </h2>
+            <p>احصل على عدد كبير من الاعجابات الحقيقيه بأسعار رائعة لتحسين ظهورك على السوشيال ميديا.</p>
+            <button onclick="window.location.href='order_followers 2.html'">شراء الآن</button>
+        </div>
+    </main>
+    <footer>
+        جميع الحقوق محفوظة &copy; 2024 - موقع خدمات السوشيال ميديا
+    </footer>
+</body>
+</html>

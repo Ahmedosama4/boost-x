@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طلب زيادة المتابعين</title>
+    <style>
+        /* إعدادات الصفحة */
+        body {
+            font-family: 'Tajawal', Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(to right, #ff9800, #e67e22);
+            color: white;
+            margin: 0;
+        }
+
+        /* إعدادات العنوان */
+        h1 {
+            margin: 20px 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* تصميم النموذج */
+        form {
+            background: white;
+            color: #333;
+            padding: 20px;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+        }
+
+        /* النصوص */
+        label {
+            display: block;
+            text-align: right;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            direction: rtl;
+        }
+
+        /* الزر */
+        button {
+            width: 100%;
+            padding: 10px 15px;
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e67e22;
+        }
+
+        /* تحسين النصوص */
+        input::placeholder, select {
+            font-size: 0.9rem;
+        }
+    </style>
+
+    <!-- إضافة خط تجوال -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>طلب زيادة المتابعين</h1>
+    <form id="contact-form">
+        <label for="email">البريد الإلكتروني:</label>
+        <input type="email" id="email" name="email" placeholder="ادخل بريدك الإلكتروني" required>
+        
+        <label for="followers">الباقة المطلوبة:</label>
+        <select id="followers" name="followers" required>
+            <option value="1000">1000 متابع - 50 جنيه</option>
+            <option value="5000">5000 متابع - 200 جنيه</option>
+            <option value="10000">10000 متابع - 400 جنيه</option>
+            <option value="10000">10000 متابع - 400 جنيه</option>
+            <option value="10000">10000 متابع - 400 جنيه</option>
+            <option value="10000">10000 متابع - 400 جنيه</option> 
+            <option value="10000">10000 متابع - 400 جنيه</option>
+            <option value="10000">10000 متابع - 400 جنيه</option>
+            <option value="10000">10000 متابع - 400 جنيه</option>
+            <option value="10000">10000 متابع - 400 جنيه</option>
+            <option value="10000">10000 متابع - 400 جنيه</option>
+            <option value="10000">10000 متابع - 400 جنيه</option>
+            <option value="10000">10000 متابع - 400 جنيه</option>
+            <option value="10000">10000 متابع - 400 جنيه</option>
+            <option value="10000">10000 متابع - 400 جنيه</option>
+            <option value="10000">10000 متابع - 400 جنيه</option>
+            <option value="10000">10000 متابع - 400 جنيه</option>
+            <option value="10000">10000 متابع - 400 جنيه</option>
+            <option value="10000">10000 متابع - 400 جنيه</option>
+            <option value="10000">10000 متابع - 400 جنيه</option>
+            <option value="10000">10000 متابع - 400 جنيه</option>
+            <option value="10000">10000 متابع - 400 جنيه</option>
+            <option value="10000">10000 متابع - 400 جنيه</option>
+            <option value="10000">10000 متابع - 400 جنيه</option>
+        </select>
+
+        <label for="profileLink">لينك البروفايل الخاص بك:</label>
+        <input type="text" id="profileLink" name="profileLink" placeholder="أدخل رابط بروفايلك" required>
+        
+        <button type="submit">إرسال الطلب</button>
+    </form>
+    
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("t5SJ7wUPIXaoLjQs4"); // ضع هنا User ID الخاص بك من لوحة EmailJS
+        })();
+        
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // منع تحديث الصفحة
+            
+            // الحصول على القيم المدخلة في الحقول
+            const email = document.getElementById('email').value;
+            const followers = document.getElementById('followers').value;
+            const profileLink = document.getElementById('profileLink').value;
+
+            // إرسال البيانات باستخدام EmailJS
+            emailjs.sendForm('service_bd13wm5', 'template_0os6clw', this)
+                .then(function(response) {
+                    alert('تم إرسال الطلب بنجاح!');
+                }, function(error) {
+                    alert('فشل في إرسال الطلب: ' + error);
+                });
+        });
+    </script>
+</body>
+</html>
