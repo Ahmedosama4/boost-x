@@ -6,82 +6,115 @@
     <title>صفحة المتجر</title>
     <style>
         body {
-            font-family: "Tajawal", Arial, sans-serif; /* خط جذاب وداعم للعربية */
-            background-color: #f8f9fa;
+            font-family: "Tajawal", Arial, sans-serif;
+            background-color: #f4f5f7; /* خلفية فاتحة */
             color: #333;
             margin: 0;
             padding: 0;
-            direction: rtl; /* لجعل النصوص من اليمين إلى اليسار */
+            direction: rtl;
         }
 
         header {
             text-align: center;
             padding: 20px;
-            background: linear-gradient(90deg, #ff9800, #e67e22);
+            background: linear-gradient(90deg, #3498db, #2980b9); /* تدرج لوني من الأزرق */
             color: white;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
+            font-weight: 700;
+        }
+
+        /* رابط الملف الشخصي */
+        #profileLink {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #3498db;
+            font-size: 1.1rem;
+            text-decoration: none;
+            padding: 12px 18px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        #profileLink:hover {
+            background-color: #3498db;
+            color: #fff;
+            transform: scale(1.1);
         }
 
         main {
-            padding: 20px;
+            padding: 40px 20px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 30px;
             align-items: center;
         }
 
         .product {
             border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 15px;
+            border-radius: 15px;
+            padding: 20px;
             width: 90%;
-            max-width: 400px;
+            max-width: 350px;
             background: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: right; /* لتنسيق النصوص من اليمين */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
         }
 
         .product h2 {
-            margin: 0 0 10px;
-            font-size: 1.5rem;
-            color: #ff9800;
+            margin: 0;
+            font-size: 1.6rem;
+            color: #3498db;
+            margin-bottom: 15px;
         }
 
         .product p {
-            margin: 0 0 15px;
-            line-height: 1.6;
+            margin: 0;
+            line-height: 1.8;
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 20px;
         }
 
         .product button {
-            background: #ff9800;
+            background: #2980b9;
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 12px 20px;
+            border-radius: 25px;
             cursor: pointer;
             font-size: 1rem;
-            transition: background 0.3s;
             width: 100%;
+            transition: background 0.3s ease;
         }
 
         .product button:hover {
-            background: #e67e22;
+            background: #1f6ea6;
         }
 
         footer {
             text-align: center;
-            padding: 10px;
-            background: #e67e22;
+            padding: 15px;
+            background: #2980b9;
             color: white;
             position: fixed;
             bottom: 0;
             width: 100%;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
     </style>
     <!-- إضافة خط "تجوال" -->
@@ -89,8 +122,10 @@
 </head>
 <body>
     <header>
-        <h1>مرحبًا في متجرنا</h1>
+        <h1>BOOST-X</h1>
+        <a href="profile.html" id="profileLink">الملف الشخصي</a>
     </header>
+
     <main>
         <!-- المنتج الأول -->
         <div class="product">
@@ -98,51 +133,53 @@
             <p>احصل على عدد كبير من المتابعين الحقيقيين بأسعار رائعة لتحسين ظهورك على السوشيال ميديا.</p>
             <button onclick="window.location.href='order_followers.html'">شراء الآن</button>
         </div>
-        <!-- المنتج الثاني -->
+
+               <!-- المنتج الثالث -->
         <div class="product">
-            <h2>خدمة إدارة الحساب</h2>
-            <p>نساعدك على إدارة حساباتك بكفاءة عالية لتحقيق أهدافك الرقمية.</p>
-            <button onclick="window.location.href='manage_account.html'">شراء الآن</button>
+            <h2>خدمة زيادة لايكات</h2>
+            <p>احصل على عدد كبير من الاعجابات الحقيقة بأسعار رائعة لتحسين ظهورك على السوشيال ميديا.</p>
+            <button onclick="window.location.href='order_followers2.html'">شراء الآن</button>
         </div>
-       <!-- المنتج الثالث -->
+
+        <!-- المنتج الرابع -->
         <div class="product">
-            <h2>خدمة زيادة لايكات   </h2>
-            <p>احصل على عدد كبير من الاعجابات الحقيقيه بأسعار رائعة لتحسين ظهورك على السوشيال ميديا.</p>
-            <button onclick="window.location.href='order_followers 2.html'">شراء الآن</button>
+            <h2>خدمة زيادة المشاهدات</h2>
+            <p>احصل على عدد كبير من المشاهدات الحقيقية بأسعار رائعة لتحسين ظهورك على السوشيال ميديا.</p>
+            <button onclick="window.location.href='views.html'">شراء الآن</button>
         </div>
-          <!-- المنتج الثالث -->
+
+        <!-- المنتج الخامس -->
         <div class="product">
-            <h2>خدمة زيادة المشاهدات  </h2>
-            <p>احصل على عدد كبير من المشاهدات  الحقيقيه بأسعار رائعة لتحسين ظهورك على السوشيال ميديا.</p>
-            <button onclick="window.location.href='order_followers 2.html'">شراء الآن</button>
+            <h2>خدمة زيادة الحفظ على الفيديو</h2>
+            <p>احصل على عدد كبير من الحفظ على المقطع الخاص بك بأسعار رائعة لتحسين ظهورك على السوشيال ميديا.</p>
+            <button onclick="window.location.href='save.html'">شراء الآن</button>
         </div>
-          <!-- المنتج الثالث -->
-          <div class="product">
-            <h2>خدمة زيادة حفظ علي الفديو  </h2>
-            <p>احصل على عدد كبير من الحفظ علي المقطع الخاص بك  بأسعار رائعة لتحسين ظهورك على السوشيال ميديا.</p>
-            <button onclick="window.location.href='order_followers 2.html'">شراء الآن</button>
-        </div>
-           <!-- المنتج الثالث -->
+
+        <!-- المنتج السادس -->
         <div class="product">
-            <h2>خدمة المشاركه  </h2>
-            <p>احصل على عدد كبير من المشاركات الحقيقيه بأسعار رائعة لتحسين ظهورك على السوشيال ميديا.</p>
-            <button onclick="window.location.href='order_followers 2.html'">شراء الآن</button>
+            <h2>خدمة المشاركة</h2>
+            <p>احصل على عدد كبير من المشاركات الحقيقية بأسعار رائعة لتحسين ظهورك على السوشيال ميديا.</p>
+            <button onclick="window.location.href='share.html'">شراء الآن</button>
         </div>
-        <!-- المنتج الثالث -->
+
+        <!-- المنتج السابع -->
         <div class="product">
-            <h2>خدمة تعليقات مخصصه  </h2>
-            <p>احصل على عدد كبير من التعليقات التي ستختار ماذا تريد في التعليقات  الحقيقيه بأسعار رائعة لتحسين ظهورك على السوشيال ميديا.</p>
-            <button onclick="window.location.href='order_followers 2.html'">شراء الآن</button>
+            <h2>خدمة تعليقات مخصصة</h2>
+            <p>احصل على عدد كبير من التعليقات التي ستختار ماذا تريد في التعليقات الحقيقية بأسعار رائعة لتحسين ظهورك على السوشيال ميديا.</p>
+            <button onclick="window.location.href='Custom comments.html'">شراء الآن</button>
         </div>
-        <!-- المنتج الثالث -->
+
+        <!-- المنتج الثامن -->
         <div class="product">
-            <h2>خدمة تعليقات غير مخصصة  </h2>
-            <p>احصل على عدد كبير من التعليقات ال عشوائية  الحقيقيه بأسعار رائعة لتحسين ظهورك على السوشيال ميديا.</p>
-            <button onclick="window.location.href='order_followers 2.html'">شراء الآن</button>
+            <h2>خدمة تعليقات غير مخصصة</h2>
+            <p>احصل على عدد كبير من التعليقات العشوائية الحقيقية بأسعار رائعة لتحسين ظهورك على السوشيال ميديا.</p>
+            <button onclick="window.location.href='Comments.html'">شراء الآن</button>
         </div>
     </main>
+
     <footer>
         جميع الحقوق محفوظة &copy; 2024 - موقع خدمات السوشيال ميديا
     </footer>
-</body>
+
+   </body>
 </html>

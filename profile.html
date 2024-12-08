@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الملف الشخصي</title>
+    <style>
+        body {
+            font-family: 'Cairo', Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+           background: linear-gradient(90deg, #3498db, #2980b9);
+            padding: 25px;
+            color: white;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            padding: 30px;
+            max-width: 900px;
+            margin: auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .profile-info, .order-history {
+            margin-bottom: 30px;
+        }
+
+        .profile-info h2, .order-history h3 {
+            color: #34495e;
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .profile-info p, .order-history p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+        }
+
+        .profile-info span {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .order-history ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .order-history li {
+            background: #ecf0f1;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            color: #2c3e50;
+        }
+
+        button {
+            background: #e74c3c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #c0392b;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 1rem;
+        }
+        
+        /* تحميل الخط العربي */
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&display=swap');
+    </style>
+</head>
+<body>
+    <header>
+        <h1>الملف الشخصي</h1>
+    </header>
+
+    <div class="container">
+        <div class="profile-info">
+            <h2>بيانات الحساب</h2>
+            <p><strong>البريد الإلكتروني:</strong> <span id="email"></span></p>
+        </div>
+
+        <div class="order-history">
+            <h3>الطلبات السابقة</h3>
+            <ul id="orderList"></ul>
+            <button id="clearOrders">مسح الطلبات</button>
+        </div>
+    </div>
+
+    <footer>
+        جميع الحقوق محفوظة &copy; 2024
+    </footer>
+
+    <script>
+        // استرجاع البيانات من localStorage
+        window.onload = function() {
+            const email = localStorage.getItem('email');
+            const orders = JSON.parse(localStorage.getItem('orders')) || [];
+
+            // عرض بيانات البريد الإلكتروني
+            document.getElementById('email').textContent = email;
+
+            // عرض الطلبات
+            const orderList = document.getElementById('orderList');
+            orders.forEach(order => {
+                const li = document.createElement('li');
+                li.textContent = order;
+                orderList.appendChild(li);
+            });
+
+            // إضافة حدث لحذف الطلبات
+            document.getElementById('clearOrders').addEventListener('click', function() {
+                localStorage.removeItem('orders'); // حذف الطلبات من Local Storage
+                orderList.innerHTML = ''; // تفريغ قائمة الطلبات في الصفحة
+                alert('تم مسح جميع الطلبات بنجاح!');
+            });
+        };
+    </script>
+</body>
+</html>
